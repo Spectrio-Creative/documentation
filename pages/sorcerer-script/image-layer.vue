@@ -20,11 +20,11 @@
       :photos="[
         {
           caption: 'Image placeholder in template comp.',
-          src: '/images/sorcerer/Ib_original.jpg'
+          src: `${route}images/sorcerer/Ib_original.jpg`
         },
         {
           caption: 'Resulting image, scaled to fill the bg, in final comp.',
-          src: '/images/sorcerer/Ib.jpg'
+          src: `${route}images/sorcerer/Ib.jpg`
         }
       ]"
     >
@@ -53,11 +53,11 @@
       :photos="[
         {
           caption: 'Image placeholder in template comp.',
-          src: '/images/sorcerer/I_original.jpg'
+          src: `${route}images/sorcerer/I_original.jpg`
         },
         {
           caption: 'Resulting image, masked and cropped, in final comp.',
-          src: '/images/sorcerer/If.jpg'
+          src: `${route}images/sorcerer/If.jpg`
         }
       ]"
     >
@@ -84,11 +84,11 @@
       :photos="[
         {
           caption: 'Image placeholder in template comp.',
-          src: '/images/sorcerer/I_original.jpg'
+          src: `${route}images/sorcerer/I_original.jpg`
         },
         {
           caption: 'Resulting image, centered, in final comp.',
-          src: '/images/sorcerer/In.jpg'
+          src: `${route}images/sorcerer/In.jpg`
         }
       ]"
     >
@@ -119,11 +119,11 @@
       :photos="[
         {
           caption: 'Image placeholder in template comp.',
-          src: '/images/sorcerer/I_original.jpg'
+          src: `${route}images/sorcerer/I_original.jpg`
         },
         {
           caption: 'Resulting image, centered, in final comp.',
-          src: '/images/sorcerer/Is.jpg'
+          src: `${route}images/sorcerer/Is.jpg`
         }
       ]"
     >
@@ -157,8 +157,11 @@
 
 <script lang="ts">
 import Vue from "vue";
+import Page from "~/mixins/page";
 
-export default Vue.extend({});
+export default Vue.extend({
+  mixins: [Page]
+});
 </script>
 
 <style scoped></style>

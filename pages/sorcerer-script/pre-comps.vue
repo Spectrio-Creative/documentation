@@ -5,11 +5,11 @@
       :photos="[
         {
           caption: 'Precomps to be relinked.',
-          src: '/images/sorcerer/pc_intro_project.jpg'
+          src: `${route}images/sorcerer/pc_intro_project.jpg`
         },
         {
           caption: 'Location to relink.',
-          src: '/images/sorcerer/pc_intro_comp.jpg'
+          src: `${route}images/sorcerer/pc_intro_comp.jpg`
         }
       ]"
     >
@@ -20,7 +20,7 @@
       </p>
       <p>
         As mentioned in the
-        <a href="../introduction/#Project-Setup">Introduction tab</a> , the
+        <a :href="`${route}introduction/#Project-Setup`">Introduction tab</a> , the
         script will automatically copy the template precomps to the new project
         folder if they are contained within a ‘Procomps’ subfolder they will
         not, however automatically relink in the new composition<sup>*</sup>. In
@@ -44,11 +44,11 @@
       :photos="[
         {
           caption: 'Precomp to be linked',
-          src: '/images/sorcerer/pc_nest_project.jpg'
+          src: `${route}images/sorcerer/pc_nest_project.jpg`
         },
         {
           caption: 'Linked precomp nested in another linked precomp.',
-          src: '/images/sorcerer/pc_nest_comp.jpg'
+          src: `${route}images/sorcerer/pc_nest_comp.jpg`
         }
       ]"
     >
@@ -65,7 +65,7 @@
         could be useful if you want to have the option of swapping whole
         segments of your template. To implement, the 'v' subtag is used in
         conjuction with a
-        <a href="../introduction/#Group-Tag">Group Layer</a> of the same name as
+        <a :href="`${route}introduction/#Group-Tag`">Group Layer</a> of the same name as
         the precomp you want to toggle.
       </p>
       <p>
@@ -88,12 +88,12 @@
       :photos="[
         {
           caption: 'Project showing renamed precomp.',
-          src: '/images/sorcerer/pc_text_project.jpg'
+          src: `${route}images/sorcerer/pc_text_project.jpg`
         },
         {
           caption:
             'Original precomps and precomps with relinked / resized text.',
-          src: '/images/sorcerer/pc_text_example.gif'
+          src: `${route}images/sorcerer/pc_text_example.gif`
         }
       ]"
     >
@@ -148,8 +148,11 @@
 
 <script lang="ts">
 import Vue from "vue";
+import Page from "~/mixins/page";
 
-export default Vue.extend({});
+export default Vue.extend({
+  mixins: [Page]
+});
 </script>
 
 <style scoped></style>

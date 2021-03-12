@@ -14,10 +14,15 @@
 <script lang="ts">
 import Vue from "vue";
 
-const baseUrl: string = "/sorcerer-script";
+const baseUrl: string = "/creative/documentation/sorcerer-script";
 
 export default Vue.extend({
   layout: "docs",
+  head() {
+    return {
+      title: "The Docs: The Sorcerer’s Apprentice"
+    };
+  },
   data() {
     return {
       navLinks: [
