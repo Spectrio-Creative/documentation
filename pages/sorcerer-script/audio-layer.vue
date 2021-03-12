@@ -19,8 +19,11 @@
 
 <script lang="ts">
 import Vue from "vue";
+import Page from "~/mixins/page";
 
-export default Vue.extend({});
+export default Vue.extend({
+  mixins: [Page]
+});
 </script>
 
 <style scoped></style>

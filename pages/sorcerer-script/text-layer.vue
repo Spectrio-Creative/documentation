@@ -4,11 +4,11 @@
       title="Single Line Text"
       :photos="[
         {
-          src: '/images/sorcerer/t_single.jpg',
+          src: `${route}images/sorcerer/t_single.jpg`,
           caption: 'Image placeholder in template comp.'
         },
         {
-          src: '/images/sorcerer/t_single_demo.jpg',
+          src: `${route}images/sorcerer/t_single_demo.jpg`,
           caption: 'Resulting image, centered, in final comp.'
         }
       ]"
@@ -25,11 +25,11 @@
       :photos="[
         {
           caption: 'Image placeholder in template comp.',
-          src: '/images/sorcerer/Tm.jpg'
+          src: `${route}images/sorcerer/Tm.jpg`
         },
         {
           caption: 'Resulting image, centered, in final comp.',
-          src: '/images/sorcerer/Tm_demo.jpg'
+          src: `${route}images/sorcerer/Tm_demo.jpg`
         }
       ]"
     >
@@ -76,11 +76,11 @@
       :photos="[
         {
           caption: 'Template comp with Heading style.',
-          src: '/images/sorcerer/ufs_original.jpg'
+          src: `${route}images/sorcerer/ufs_original.jpg`
         },
         {
           caption: 'Resulting comp when script is run.',
-          src: '/images/sorcerer/ufs_output.jpg'
+          src: `${route}images/sorcerer/ufs_output.jpg`
         }
       ]"
     >
@@ -92,7 +92,7 @@
         used. The size is controlled by the size of the
         <a href="#Point-Text">text box</a> and the color can be controlled by
         setting up a
-        <a href="../introduction/#Color-Control">Color Control</a> layer.
+        <a :href="`${route}introduction/#Color-Control`">Color Control</a> layer.
       </p>
       <p>
         In the example below the font style is <a>setup</a> in the main comp
@@ -117,11 +117,11 @@
       :photos="[
         {
           caption: 'Template comp with font layers.',
-          src: '/images/sorcerer/font-reference-layers.jpg'
+          src: `${route}images/sorcerer/font-reference-layers.jpg`
         },
         {
           caption: 'Resulting menu when script is run.',
-          src: '/images/sorcerer/font-reference.jpg'
+          src: `${route}images/sorcerer/font-reference.jpg`
         }
       ]"
     >
@@ -142,7 +142,7 @@
       </p>
       <p>
         Making one is quite simple. First,
-        <a href="../introduction/#Project-Setup">create a blank template</a>,
+        <a :href="`${route}introduction/#Project-Setup`">create a blank template</a>,
         then simply create a font layer for each font you’d like to be able to
         easily reference and name them as
         <span class="source">!F [Font Family] Font Style</span>. The below
@@ -159,7 +159,8 @@
         use Area Text instead of Point Text (ie: when creating a text field,
         click &amp; drag out a box instead of simply clicking and then typing).
         If you use Point text, the text will still be editable but it will not
-        resize and could present other possible other issues with the current script.
+        resize and could present other possible other issues with the current
+        script.
       </p>
     </doc-section>
   </div>
@@ -167,8 +168,11 @@
 
 <script lang="ts">
 import Vue from "vue";
+import Page from "~/mixins/page";
 
-export default Vue.extend({});
+export default Vue.extend({
+  mixins: [Page]
+});
 </script>
 
 <style scoped></style>

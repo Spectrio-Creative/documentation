@@ -3,7 +3,7 @@
     <doc-section title="Installation">
       <p>
         Installed like any other AE script; download the both the script and the
-        UI Panel from the <a href="../downloads/">downloads page</a>, then add
+        UI Panel from the <a :href="`${route}downloads/`">downloads page</a>, then add
         the unzipped script file to your AE Scripts folder (<span class="source"
           >Applications⁩/Adobe After Effects &lt;version&gt;⁩/Scripts</span
         >
@@ -27,7 +27,7 @@
         Starting with version 2.3.0, you must also install the Google “dwebp”
         CLI app. You can do so by
         <a
-          href="/creative/tools/sorcerer-script/includes/assets/script/dwebp_<?php echo get_operating_system(); ?>.zip"
+          :href="`${route}script/dwebp.zip`"
           download
           >Downloading it</a
         >
@@ -47,12 +47,12 @@
       :photos="[
         {
           caption: 'Example project with 4 templates in one templates folder.',
-          src: '/images/sorcerer/projectsetup.jpg'
+          src: `${route}images/sorcerer/projectsetup.jpg`
         },
         {
           caption:
             'Example project with 4 templates split between two folders.',
-          src: '/images/sorcerer/projectsetup2.jpg'
+          src: `${route}images/sorcerer/projectsetup2.jpg`
         }
       ]"
     >
@@ -87,11 +87,11 @@
       :photos="[
         {
           caption: 'Example comp with 6 editable layers.',
-          src: '/images/sorcerer/layersetup.jpg'
+          src: `${route}images/sorcerer/layersetup.jpg`
         },
         {
           caption: 'Resulting menu when script is run on example comp.',
-          src: '/images/sorcerer/layersetup_demo.jpg'
+          src: `${route}images/sorcerer/layersetup_demo.jpg`
         }
       ]"
     >
@@ -126,7 +126,7 @@
         corresponding menu item. For example, a layer named
         <span class="source">!Is [Intro] Logo</span> would first tell the script
         that the layer is an image which you would like to
-        <a href="../image-layer/#Scale-Down-Sizing">scale down to fit</a> and
+        <a :href="`${route}image-layer/#Scale-Down-Sizing`">scale down to fit</a> and
         second that it should be editable in the menu by the field title
         &lsquo;Logo&rsquo; organised under the tab &lsquo;Intro&rsquo;.
       </p>
@@ -151,11 +151,11 @@
       :photos="[
         {
           caption: 'Example comp with group layers to organise menu.',
-          src: '/images/sorcerer/groupsetup.jpg'
+          src: `${route}images/sorcerer/groupsetup.jpg`
         },
         {
           caption: 'Resulting menu when script is run.',
-          src: '/images/sorcerer/groupsetup_demo.jpg'
+          src: `${route}images/sorcerer/groupsetup_demo.jpg`
         }
       ]"
     >
@@ -228,11 +228,11 @@
       :photos="[
         {
           caption: 'Example comp with 2 font style layers.',
-          src: '/images/sorcerer/fs_project.jpg'
+          src: `${route}images/sorcerer/fs_project.jpg`
         },
         {
           caption: 'Resulting menu when script is run.',
-          src: '/images/sorcerer/fs_output.jpg'
+          src: `${route}images/sorcerer/fs_output.jpg`
         }
       ]"
     >
@@ -267,7 +267,7 @@
       </p>
       <p class="note">
         More on the usage of font style in the
-        <a href="../text-layer/#Using-Font-Styles">Using Font Styles</a>
+        <a :href="`${route}text-layer/#Using-Font-Styles`">Using Font Styles</a>
         section.
       </p>
     </doc-section>
@@ -276,8 +276,11 @@
 
 <script lang="ts">
 import Vue from "vue";
+import Page from "~/mixins/page";
 
-export default Vue.extend({});
+export default Vue.extend({
+  mixins: [Page]
+});
 </script>
 
 <style scoped></style>
